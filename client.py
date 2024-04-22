@@ -49,10 +49,17 @@ async def update_state(socket):
 def display_init(screen):
     if not player_ready:
         font = pygame.font.Font('assets/fuentes/Pixeled.ttf', 10)
-        text_surface = font.render('Presiona espacio si estas listo!', True, (255, 255, 255))
-        text_rect = text_surface.get_rect(center=(screen.get_width() // 2, screen.get_height() // 2))
-        text_rect.y += 20
-        screen.blit(text_surface, text_rect)
+        
+        text_surface_space = font.render('Presiona espacio!', True, (255, 255, 255))
+        text_rect_space = text_surface_space.get_rect(center=(screen.get_width() // 2, screen.get_height() // 2.5))
+        text_rect_space.y += 70
+        screen.blit(text_surface_space, text_rect_space)
+        
+        text_surface_controls = font.render('Teclas W para disparar,A/D para moverte.', True, (255, 255, 255))
+        text_rect_controls = text_surface_controls.get_rect(center=(screen.get_width() // 2, screen.get_height() // 2))
+        text_rect_controls.y += 70
+        screen.blit(text_surface_controls, text_rect_controls)
+
 
         
 def display_victory(screen):

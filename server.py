@@ -37,7 +37,7 @@ def setup_hamsters():
 async def update_state():
     global hamsters_removed, players_removed
 
-    while True:  # Modificar el bucle para que siga ejecutándose incluso después de players_removed sea True
+    while True: 
         if clients:  
             verify_players()
             if players_ready:
@@ -69,13 +69,12 @@ async def update_state():
         await asyncio.sleep(0.05)
 
 
-
 async def shoot_lasers_periodically():
     while not players_ready: 
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.5)
     
     while True:
-        await asyncio.sleep(1) 
+        await asyncio.sleep(0.5) 
         shoot_lasers_hamsters()
 
 def shoot_lasers_hamsters():
@@ -151,8 +150,6 @@ async def manage_clients(socket):
             
     except websockets.ConnectionClosed:
         print(f"Conexión del cliente {id_player} cerrada inesperadamente")
-        clients.remove(socket)
-        del state_movements[id_player] 
     finally:
         clients.remove(socket)
         if id_player in state_movements:
