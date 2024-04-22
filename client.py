@@ -172,8 +172,8 @@ async def main():
             for laser in lasers:
                 pygame.draw.rect(screen, (255, 255, 255), (laser['x'] + 15, laser['y'], 5, 20))
 
-            for laser in lasers_hamsters:  # Dibujar los láseres disparados por los hamsters
-                pygame.draw.rect(screen, (255, 0, 0), (laser['x'] + 15, laser['y'], 5, 20))  # Rojo para los láseres de los hamsters
+            for laser in lasers_hamsters:  
+                pygame.draw.rect(screen, (255, 0, 0), (laser['x'] + 15, laser['y'], 5, 20)) 
 
             
             if not hamsters and players_ready == True:
