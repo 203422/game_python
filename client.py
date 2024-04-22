@@ -6,7 +6,7 @@ from pygame.locals import *
 import json
 import websockets
 
-host = "192.168.1.82"
+host = "0.0.0.0"
 port = 5555
 
 player_state = {'x': 250, 'y': 570, 'ready': False, 'shoot': False}

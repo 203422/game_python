@@ -3,7 +3,7 @@ import json
 import websockets
 from random import randint
 
-host = "192.168.1.82"
+host = "0.0.0.0"
 port = 5555
 
 count_players = 0
